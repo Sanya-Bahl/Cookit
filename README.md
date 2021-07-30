@@ -20,7 +20,7 @@ Cookit is a food recipe website that uses an API to fetch the recipe of a dish o
 - clone or download this repository 
 - to install npm packages, run the following command in REPL.
 
-     npm i express
+      npm i express
               
 - run the source code on the editor.
 
