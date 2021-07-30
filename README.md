@@ -1,6 +1,6 @@
 # Cookit
 ***
-Cookit is a food recipe website that uses an API to fetch the recipe of a dish of a particular cuisine and a dish type. This website is built using ejs template engine. It also has a login/register system to authenticate its users.
+Cookit is a food recipe blog which provides the user with the recipe of a dish of a specific cuisine and a dish type (eg - drinks, main course, etc.). It is built using ejs template engine. This site also has a login/register system which authenticates its users.
 
 ### Front-end
 - Bootstrap
@@ -18,9 +18,8 @@ Cookit is a food recipe website that uses an API to fetch the recipe of a dish o
 - a simple text editor/ HTML CSS and Javascript editor
 ### Running the code
 - clone or download this repository 
-- to install npm packages, run the following command in REPL.
+- To install nmp packages run the following command in REPL.
 
-      npm i express
-              
+                   npm i express
+                  
 - run the source code on the editor.
-
