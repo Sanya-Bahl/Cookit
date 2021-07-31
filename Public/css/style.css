@@ -2,6 +2,7 @@
 body
 {
     background: url('/images/cover.jpg') no-repeat center fixed;
+    backdrop-filter: blur(5px);
 
 }
 #main 
@@ -58,13 +59,7 @@ body
 {
   background-color: rgb(238, 138, 138) !important;
 }
-.rod
-{
-  border: 2px dotted black;
-  height: 300px;
-  width: 700px;
-  padding-top: 5px;
-}
+
 .dish
 {
   background-color: burlywood !important;
@@ -209,4 +204,25 @@ body
 {
   font-size: 1.5rem;
 
+}
+.a1
+{
+  position: relative; 
+  margin-left: 48%; 
+}
+.a2
+{
+
+  width: 500px;
+  font-family: 'MonteCarlo', cursive;
+  font-weight: bold;
+  font-size: 1.8rem;
+  
+}
+.rod
+{
+  border: 5px dotted black;
+  height: 300px;
+  width: 700px;
+  padding-top: 5px;
 }
