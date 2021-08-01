@@ -2,7 +2,7 @@
 body
 {
     background: url('/images/cover.jpg') no-repeat center fixed;
-    backdrop-filter: blur(2px);
+    
 
 }
 #main 
@@ -241,4 +241,8 @@ body
 .f 
 {
   margin-left: -52px;
+}
+.recipe
+{
+  background-color: white;
 }
