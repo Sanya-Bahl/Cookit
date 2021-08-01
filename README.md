@@ -15,7 +15,8 @@ Cookit is a food recipe blog which provides the user with the recipe of a dish o
 ## Getting started
 
 ### Requirements
-- a simple text editor/ HTML CSS and Javascript editor
+- a simple text editor/ HTML CSS and Javascript editor.
+- make sure you have MongoDB installed in your system.
 ### Running the code
 - clone or download this repository 
 - To install nmp packages run the following command in REPL.
