@@ -1,8 +1,61 @@
 <%- include('start'); -%>
 
 <section class="info">
-    <div class="temp">
-        
+    <div id="temp" style="background: url(/images/recipe.jpg) no-repeat center/cover; padding: 124px;">
+        <div class="container">
+            <div class="row d-flex justify-content-center my-5">
+                <div class="col col-lg-12 d-flex my-4 justify-content-center">
+                    <h1 style="font-family: 'Great Vibes', cursive; font-size:6rem;">Let's get started</h1>
+                </div>
+                <div class="col col-lg-6 d-flex justify-content-center">
+                    <div class="ing" align="center">
+                      <h4>Ingredients</h4>
+                      <div class="container d-flex justify-content-center"">
+                          <div class="row d-flex justify-content-center">
+                            <ul align="center">
+                                <% for(var i=0; i<mydata.length; i++) { %>
+                                  <% for(var j=0; j<mydata[i].steps.length; j++) { %>
+                                      <% for(var k=0; k<mydata[i].steps[j].ingredients.length; k++) { %>   
+                                      <div class="col col-lg-12 d-flex justify-content-center"">
+                                          <li><%= mydata[i].steps[j].ingredients[k].name %></li>
+                                      </div>                         
+                                     
+                                      <%}%>
+                                 <% } %> 
+                              
+                                  
+                                <% } %>
+                              </ul>
+                          </div>
+                      </div>
+                      
+                    </div>
+                </div>
+ 
+            
+            </div>
+            <div class="row d-flex my-4" style="box-shadow: 0px 5px 15px black; background-color: white;">
+                <div class="col col-lg-12 d-flex my-4 justify-content-center">
+                 <h2>Recipe</h2>
+                </div> 
+                <div class="col col-lg-12 d-flex justify-content-start" style="background-color:coral;">
+                    <ol>
+                        <% for(var i=0; i<mydata.length; i++) { %>
+                           <% for(var j=0; j<mydata[i].steps.length; j++) { %>
+                               <% for(var k=0; k<mydata[i].steps[j].ingredients.length; k++) { %>   
+                               <div class="col col-lg-12 d-flex">
+                                   <li><%= mydata[i].steps[j].step %></li>
+                               </div>                         
+                               
+                               <%}%>
+                          <% } %> 
+                       
+                           
+                         <% } %>
+                           </ol>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 

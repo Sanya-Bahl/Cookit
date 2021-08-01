@@ -49,58 +49,37 @@ app.post("/recipes/:cuisine/:dishname",(req,res)=>
                 const a=Math.ceil(currency.results.length/3)
                 res.render("dishes",{mydish: _.capitalize(req.params.dishname), dishes: currency.results, rows: a});
             });
-});
+})
+})
 
 app.post('/recipe-info/:id',(req,res)=>
 {
   const url=`https://api.spoonacular.com/recipes/${req.params.id}/analyzedInstructions?apiKey=514580f415394925bff2425d6cbd9f24`;
-  resp.on("data", (chunk) => {
+  https.get(url, (resp)=>
+  {
+    var data;
+     
+      resp.on("data", (chunk) => {
      
 
-    if (!data) {
-      data = chunk;
-    } else {
-      data += chunk;
-    }
-    });
-
-  resp.on("end", function() {
-      const currency=JSON.parse(data);
-    
-      const a=Math.ceil(currency.results.length/3)
-      res.render("dishes",{mydish: _.capitalize(req.params.dishname), dishes: currency.results, rows: a});
-  });
+              if (!data) {
+                data = chunk;
+              } else {
+                data += chunk;
+              }
+              });
+        
+            resp.on("end", function() {
+                const currency=JSON.parse(data);
+                
+                res.render("info",{mydata: currency});
+            });
 })
+  
+
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 app.listen(3000,()=>
 {
-  console.log(' listening at http://localhost:3000/')
+  console.log('listening at http://localhost:3000/')
 })
