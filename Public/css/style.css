@@ -27,7 +27,6 @@ body
     height: 350px;
     width: 600px;
 
-
   }
   
   .carousel-item img {
@@ -37,22 +36,23 @@ body
       left: 0;
    
       height: 350px;
-    width: 600px;
+    width: 700px;
   }
 .carousel
 {
     border: 1px solid brown;
     width: 600px;
     float: right;
-    
+    position: relative;
+     display: block;
     margin-right: -94px;
-    margin-top: 10%;
+    margin-top: 25%;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.8);
-    display: block;
+    
 } 
 #a
 {
-  padding-top: 50px;
+  padding-top: 150px;
 }
 .modal-content
 {
@@ -260,17 +260,17 @@ body
   width: 100%;
 }
 
-.slide
+.lide
 {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.8);
   padding: 34px 0px;
 
 }
-/* .slide
+.lide
 {
   position: relative;
   bottom: 6px;
-} */
+} 
 
 hr.style18 { 
   height: 30px; 
