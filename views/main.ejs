@@ -1,20 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/css/style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-</head>
-<body>
+<%- include('start'); -%>
     
   <div class="container" id="main">
     
    
       <section class='main2'>
         <div class="container" id='main2' align="left">
+          <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">Cookit</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/recipes">Recipes</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/about">About us</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/contact">Reach us</a>
+                  </li>
+               
+                </ul>
+               
+              </div>
+            </div>
+          </nav>
             <div class="row d-flex justify-content-left">
               <div class="col col-lg-6" id='a'>
                <h1>
@@ -24,8 +37,8 @@
                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorum a aspernatur repellat harum, rem in iure ipsam possimus modi cumque natus corporis, magnam fuga. Dolores consequuntur consequatur quae blanditiis quis!
                </div> 
              <div class="button container" style="padding-left: 0px; padding-top: 17px;">
-                <button type="button" class="btn btn-dark" style="margin-right:6px;" data-bs-toggle="modal" data-bs-target="#exampleModal" id="login">Sign in</button>
-                <button type="button" class="btn btn-dark"data-bs-toggle="modal" data-bs-target="#addMyModal">Sign up</button>
+               <a href="/login"><button type="button" class="btn btn-dark">Sign in</button></a>
+               <a href="/register"><button type="button" class="btn btn-dark">Sign up</button></a>
              </div>
             </div>
             <div class="col col-lg-6">
@@ -75,76 +88,5 @@
       
      
       </section>
-      <!-- Modal -->
-      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="margin-top: 100px;">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Sign in</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form>
-                    <div class="mb-3">
-                      <label for="exampleInputEmail1" class="form-label"><i class="fa fa-envelope" aria-hidden="true"></i> Email address:</label>
-                      <input type="email" class="form-control" name="email" placeholder="Enter your email" aria-describedby="emailHelp">
-                    </div>
-                    <div class="mb-3">
-                      <label for="exampleInputPassword1" class="form-label"><i class="fa fa-key" aria-hidden="true"></i> Password:</label>
-                      <input type="password" class="form-control" name="password"  placeholder="Enter your password">
-                    </div>
-                    <div class="mb-3 form-check">
-                      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                      <label class="form-check-label" for="exampleCheck1">Remember me</label>
-                    </div>
-                    <div class="form-group">
-                      <button type="submit" class="btn btn-dark my-3">Submit</button>
-                     </div>
-                  </form>
-            </div>
-           
-          </div>
-        </div>
-      </div>
-      </div>
-      <!-- Button trigger modal -->
-      
-<!-- Modal -->
-<div class="modal fade" id="addMyModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="margin-top: 100px;">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Sign in</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form role="form" id="newModalForm">
-          <div class="form-group">
-            <label class="control-label col-md-3" for="username"><i class="fa fa-user" aria-hidden="true"></i> Username: </label>
-            <div class="col-md-9">
-              <input type="text" class="form-control" id="pName" name="pName" placeholder="Enter username" require/>
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="control-label col-md-3" for="email"><i class="fa fa-envelope" aria-hidden="true"></i> Email: </label>
-            <div class="col-md-9">
-              <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" require>
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="control-label col-md-3" for="password"><i class="fa fa-key" aria-hidden="true"></i> Password: </label>
-            <div class="col-md-9">
-              <input type="password" class="form-control" id="password" name="password" placeholder="Enter password" require>
-            </div>
-          </div>
-         <div class="form-group">
-          <button type="submit" class="btn btn-dark my-3">Submit</button>
-         </div>
-        </form>
-      </div>
-      
-    </div>
-  </div>
-</div>
-</div>
+ 
 <%- include('end'); -%>

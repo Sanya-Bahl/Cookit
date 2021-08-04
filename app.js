@@ -17,6 +17,7 @@ app.get('/',(req,res)=>
 
 app.get('/recipes',(req,res)=>
 {
+ 
   res.render('recipes')
 })
 app.get('/recipes/:customListName', (req,res)=>
@@ -24,8 +25,14 @@ app.get('/recipes/:customListName', (req,res)=>
   cuisine=req.params.customListName
   res.render("types",{mycuisine: _.capitalize(cuisine)});
 })
-
-
+app.get('/register',(req,res)=>
+{
+  res.render('register');
+})
+app.get('/login',(req,res)=>
+{
+  res.render('login');
+})
 app.post("/recipes/:cuisine/:dishname",(req,res)=>
 {
   const url=`https://api.spoonacular.com/recipes/complexSearch?apiKey=514580f415394925bff2425d6cbd9f24&cuisine=${req.params.cuisine}&type=${req.params.dishname}`
@@ -78,6 +85,7 @@ app.post('/recipe-info/:id',(req,res)=>
   
 
 });
+
 
 app.listen(3000,()=>
 {

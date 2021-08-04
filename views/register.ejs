@@ -3,7 +3,13 @@
 <div id="temp" class="signin">
 <div class="login container"align="right">
     <form role="form" id="newModalForm">
-        <h1 style="position:relative; right: 235px; top: -4px; font-family: 'MonteCarlo', cursive; font-size: 4rem; font-weight: bold;">Sign in</h1>
+        <h1 style="position:relative; right: 235px; top: -4px; font-family: 'MonteCarlo', cursive; font-size: 4rem; font-weight: bold;">Sign up</h1>
+        <div class="form-group">
+          <label class="control-label col-md-3" for="username"  style="position:relative; right: 275px;"><i class="fa fa-user" aria-hidden="true"></i> Username: </label>
+          <div class="col-md-9">
+            <input type="text" class="form-control" id="pName" name="pName" placeholder="Enter username" require style="width: 50%;">
+          </div>
+        </div>
         <div class="form-group">
           <label class="control-label col-md-3" for="email" style="position:relative; right: 306px;"><i class="fa fa-envelope" aria-hidden="true"></i> Email: </label>
           <div class="col-md-9">
@@ -16,10 +22,10 @@
             <input type="password" class="form-control" id="password" name="password" placeholder="Enter password" require style="width: 50%;">
           </div>
         </div>
-       <div class="form-group" >
+       <div class="form-group">
         <button type="submit" class="btn btn-dark my-3" style="position:relative; right: 290px;">Submit</button>
        </div>
-       <h6 style="position:relative; right: 70px;"><i>Don't have an account?<a href="/register" style="color: red; text-decoration: none;"> Create an account</a></i></h6>
+      <h6 style="position:relative; right: 130px;"><i>Already have an account?<a href="/login" style="color: red; text-decoration: none;"> Sign in</a></i></h6> 
       </form>
 </div>
 
