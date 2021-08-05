@@ -12,14 +12,14 @@
 
       $("#newModalForm").validate({
         rules: {
-          pName: {
+          username: {
             required: true,
             minlength: 8
           },
           action: "required"
         },
         messages: {
-          pName: {
+          username: {
             required: "Please enter some data",
             minlength: "Your data must be at least 8 characters"
           },

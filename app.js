@@ -1,14 +1,45 @@
-const express = require('express')
-const bodyParser= require('body-parser')
+require('dotenv').config();
+const express = require("express");
+const bodyParser = require("body-parser");
+const ejs = require("ejs");
+const mongoose = require("mongoose");
+const session = require('express-session');   
+const passport = require("passport");
+const passportLocalMongoose = require("passport-local-mongoose");
 const port= 3000
 const app=express()
-const _ = require('lodash')
-app.use(bodyParser.urlencoded({extended: true}))
+const _ = require('lodash');
 app.set('view engine', 'ejs');
 app.use(express.static("public"))
-const mongoose=require('mongoose');
-mongoose.connect('mongodb://localhost:27017/foodUserdb', {useNewUrlParser: true, useUnifiedTopology: true});
 const https=require('https')
+app.use(bodyParser.urlencoded({extended: true}))
+
+app.use(session({
+  secret: "Our little secret.",
+  resave: false,
+  saveUninitialized: false
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+mongoose.connect('mongodb://localhost:27017/foodUserdb', {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.set("useCreateIndex", true);
+
+const fooduserSchema= new mongoose.Schema({
+    username: String,
+    email: String,
+    pwd: String
+})
+fooduserSchema.plugin(passportLocalMongoose);
+
+
+const User = new mongoose.model("foodUser", fooduserSchema);
+
+passport.use(User.createStrategy());
+
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
 
 app.get('/',(req,res)=>
 {
@@ -84,6 +115,27 @@ app.post('/recipe-info/:id',(req,res)=>
 })
   
 
+});
+app.post('/register',(req,res,next)=>
+{
+  User.register({username:req.body.username, email: req.body.email},req.body.password,(err,user)=>
+  {
+    if(err)
+    {
+      console.log(err);
+      res.redirect('/register');
+    }
+    else
+       {
+         
+           passport.authenticate('local')(req,res,function(err){ // this uthenticates the user using local strategy which means authenticationg using username and pwd
+             if(err)
+             console.log(err)
+             else 
+               res.redirect('/recipes')
+           });
+       }
+  })
 });
 
 
