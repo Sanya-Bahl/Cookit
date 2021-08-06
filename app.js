@@ -27,7 +27,7 @@ mongoose.set("useCreateIndex", true);
 
 const fooduserSchema= new mongoose.Schema({
     username: String,
-    email: String,
+    name: String,
     pwd: String
 })
 fooduserSchema.plugin(passportLocalMongoose);
@@ -48,8 +48,15 @@ app.get('/',(req,res)=>
 
 app.get('/recipes',(req,res)=>
 {
- 
-  res.render('recipes')
+  if(req.isAuthenticated())
+  {
+    res.render('recipes',{username: req.user.name})
+  }
+  else
+  {
+    res.render('login')
+  }
+  
 })
 app.get('/recipes/:customListName', (req,res)=>
 {
@@ -118,7 +125,8 @@ app.post('/recipe-info/:id',(req,res)=>
 });
 app.post('/register',(req,res,next)=>
 {
-  User.register({username:req.body.username, email: req.body.email},req.body.password,(err,user)=>
+  
+  User.register({username:req.body.username, name: req.body.email},req.body.password,(err,user)=>
   {
     if(err)
     {
@@ -127,7 +135,7 @@ app.post('/register',(req,res,next)=>
     }
     else
        {
-         
+            
            passport.authenticate('local')(req,res,function(err){ // this uthenticates the user using local strategy which means authenticationg using username and pwd
              if(err)
              console.log(err)
@@ -137,8 +145,34 @@ app.post('/register',(req,res,next)=>
        }
   })
 });
+app.post('/login',(req,res)=>
+{
+  const user = new User({
+    username: req.body.username,
+    pwd: req.body.password
+})
 
-
+req.login(user, function(err)
+{
+  
+    if(err)
+    console.log(err)
+    else
+    {
+        passport.authenticate('local')(req,res,function(err) 
+        {
+           
+            res.redirect('/recipes')
+           
+        })
+    }
+})
+});
+app.get('/logout',(req,res)=>
+{
+    req.logout()
+    res.redirect('/')
+})
 app.listen(3000,()=>
 {
   console.log('listening at http://localhost:3000/')

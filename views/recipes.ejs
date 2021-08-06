@@ -1,7 +1,7 @@
 <%- include('start'); -%>
     <div class="row">
         <div class="col col-lg-12" style="background: url('/images/wall.jpg') no-repeat center center/cover; height: 500px;box-shadow: 0 5px 15px rgba(0, 0, 0, 0.8);">
-            <nav class="navbar navbar-expand-lg navbar-light" style="margin-left: 23%;">
+            <nav class="navbar navbar-expand-lg navbar-light" style="margin-left: 42%;">
                 <div class="container-fluid">
                   <a class="navbar-brand" href="#"></a>
                   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -9,6 +9,9 @@
                   </button>
                   <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
                     <ul class="navbar-nav mb-2 mb-lg-0">
+                      <li class="nav-item rectype" style="color: blue; position: relative; top: 8px;">
+                        <i class="fa fa-user-circle" aria-hidden="true"></i> Hi, <%= username %> !
+                      </li>
                       <li class="nav-item rectype" style="padding: 0px 3px;">
             
                         <a class="nav-link active" aria-current="page" href="/recipes">Home</a>
@@ -22,6 +25,10 @@
                       <li class="nav-item rectype">
                         <a class="nav-link rectype" href="/contact">Reach us</a>
                       </li>
+                      <li class="nav-item rectype">
+                        <a class="nav-link rectype" href="/logout"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+                      </li>
+                    
                   </div>
                 </div>
               </nav>

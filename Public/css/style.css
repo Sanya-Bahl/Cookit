@@ -230,12 +230,13 @@ nav a:hover
 .rectype 
 {
   padding-right: 8px;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 .rectype a:hover
 {
-  background-color: red;
+  background-color: gray;
   border-radius: 3px;
+  font-weight: bold;
 }
 .f 
 {
