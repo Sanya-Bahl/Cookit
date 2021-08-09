@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({extended: true}))
 const sendMail=require('./mail')
 const port = process.env.PORT || 3000 ;
 app.use(session({
-  secret: process.env.secret,
+  secret:'Our little secret.',
   resave: false,
   saveUninitialized: false
 }));
@@ -74,7 +74,7 @@ app.get('/login',(req,res)=>
 })
 app.post("/recipes/:cuisine/:dishname",(req,res)=>
 {
-  const url=`https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.API_KEY2}&cuisine=${req.params.cuisine}&type=${req.params.dishname}`
+  const url=`https://api.spoonacular.com/recipes/complexSearch?apiKey=514580f415394925bff2425d6cbd9f24&cuisine=${req.params.cuisine}&type=${req.params.dishname}`
   https.get(url, (resp)=>
   {
     var data;
