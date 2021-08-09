@@ -13,6 +13,7 @@ app.set('view engine', 'ejs');
 app.use(express.static("public"))
 const https=require('https')
 app.use(bodyParser.urlencoded({extended: true}))
+const sendMail=require('./mail')
 
 app.use(session({
   secret: "Our little secret.",
@@ -172,6 +173,29 @@ app.get('/logout',(req,res)=>
 {
     req.logout()
     res.redirect('/')
+})
+app.get('/about',(req,res)=>
+{
+  res.render('about')
+})
+app.get('/contact',(req,res)=>
+{
+  res.render('contact')
+})
+app.post('/email',(req,res)=>
+{
+  const {email,message}=req.body; 
+  console.log(req.body)
+  sendMail(email,message,function(err,data)
+  {
+    if(err)
+    {
+      res.status(500).json({response: 'we have an error'})
+    }else
+    {
+      res.json({response:"email sent!"})
+    }
+  });
 })
 app.listen(3000,()=>
 {

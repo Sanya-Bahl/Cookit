@@ -1,0 +1,55 @@
+<%- include('start'); -%>
+<section class="about">
+    <div id="temp">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#"></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+                <ul class="navbar-nav mb-2 mb-lg-0">
+                  <li class="nav-item">
+        
+                    <a class="nav-link navtype" aria-current="page" href="/">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link navtype" href="/about">About us</a> 
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link navtype" href="/contact">Reach us</a>
+                  </li>
+              </div>
+            </div>
+          </nav>   
+          <div class="container" style="background-color: rgb(247, 236, 220);">
+            <div class="row">
+              <div class="col col-lg-12 d-flex justify-content-center my-4">
+                <h1  style="font-family: 'STIX Two Text', serif; font-size: 3rem;">Contact us</h1>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col col-lg-6 d-flex justify-content-center pb-3">
+                <form id="form">
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label"><b>Email address</b></label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter your email" name="email" aria-describedby="emailHelp">
+                  </div>
+                  <div class="mb-3">
+                    <label for="message" class="form-label"><b>Message</b></label><br>
+                    <textarea name="message" class="form-control" id="message" cols="50" rows="10" placeholder="Type your message..."></textarea>
+                  </div>
+                  <button type="submit" value=" Send" class="btn btn-success" id="submit" />
+                  <!-- <button type="submit" class="btn btn-dark" value="submit">Send message</button> -->
+                </form>
+              </div>
+              <div class="col col-lg-6 d-flex justify-content-center pb-3">
+                <img src="/images/chef.jpg" alt="" srcset="" width="450px" style="box-shadow: 0px 5px 10px black;">
+              </div>
+            </div>
+          </div>
+       
+    </div>
+</section>
+
+<%- include('end'); -%>

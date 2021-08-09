@@ -1,5 +1,3 @@
-
-
   $(document).ready(function(){
 
     $('.a-1').waypoint(function(direction){
@@ -27,4 +25,28 @@
         }
       });
     });
+    
+      $('#form').submit((e)=>
+      {
+        
+        e.preventDefault();
+        console.log('sending');
+        const email=$('#email').val().trim();
+        const message=$('#message').val().trim();
+        const data=
+        {
+          email,
+          message
+        }
+        $.post('/email',data,()=>
+        {
+          console.log('data received!');
+        })
+      });
+       
+
+
+  
+   
+    
 });
