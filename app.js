@@ -14,9 +14,8 @@ app.use(express.static("public"))
 const https=require('https')
 app.use(bodyParser.urlencoded({extended: true}))
 const sendMail=require('./mail')
-
 app.use(session({
-  secret: "Our little secret.",
+  secret: process.env.secret,
   resave: false,
   saveUninitialized: false
 }));
@@ -68,13 +67,14 @@ app.get('/register',(req,res)=>
 {
   res.render('register');
 })
+
 app.get('/login',(req,res)=>
 {
   res.render('login');
 })
 app.post("/recipes/:cuisine/:dishname",(req,res)=>
 {
-  const url=`https://api.spoonacular.com/recipes/complexSearch?apiKey=514580f415394925bff2425d6cbd9f24&cuisine=${req.params.cuisine}&type=${req.params.dishname}`
+  const url=`https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.API_KEY2}&cuisine=${req.params.cuisine}&type=${req.params.dishname}`
   https.get(url, (resp)=>
   {
     var data;
