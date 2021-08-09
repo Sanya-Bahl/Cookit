@@ -1,6 +1,6 @@
 # Cookit
 ***
-Cookit is a food recipe blog which provides the user with the recipe of a dish of a specific cuisine and a dish type (eg - drinks, main course, etc.). It is built using ejs template engine. This site also has a login/register system which authenticates its users.
+Cookit is a food recipe blog which provides the user with the recipe of a dish of a specific cuisine and a dish type (eg - drinks, main course, etc.). It is built using ejs template engine. This site also has a login/register system which authenticates its users. It uses nodemailer to receives emails from the users.
 
 ### Front-end
 - Bootstrap
