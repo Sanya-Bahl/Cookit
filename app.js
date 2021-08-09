@@ -6,7 +6,6 @@ const mongoose = require("mongoose");
 const session = require('express-session');   
 const passport = require("passport");
 const passportLocalMongoose = require("passport-local-mongoose");
-const port= 3000
 const app=express()
 const _ = require('lodash');
 app.set('view engine', 'ejs');
@@ -14,6 +13,7 @@ app.use(express.static("public"))
 const https=require('https')
 app.use(bodyParser.urlencoded({extended: true}))
 const sendMail=require('./mail')
+const port = process.env.PORT || 3000 ;
 app.use(session({
   secret: process.env.secret,
   resave: false,
@@ -197,7 +197,7 @@ app.post('/email',(req,res)=>
     }
   });
 })
-app.listen(3000,()=>
+app.listen(port,()=>
 {
-  console.log('listening at http://localhost:3000/')
+  console.log(`listening at ${port}`)
 })
