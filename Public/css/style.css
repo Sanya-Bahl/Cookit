@@ -8,7 +8,7 @@ html,body
 }
 body
 {
-    background: url('/images/cover.jpg') no-repeat center fixed;
+    background: url('/images/cover.jpg') ;
     
 
 }
@@ -219,6 +219,14 @@ nav a:hover
   position: relative;
   bottom: 6%;
   
+}
+.region
+{
+  background-color: rgb(243, 156, 156);
+}
+.region:hover
+{
+  background-color: bisque;
 }
 .rod
 {
