@@ -4,8 +4,8 @@ const nodemailer=require('nodemailer')
 const auth=
 {
     auth:{
-        api_key:'3f3fc351581e09a415db64e9cec7398b-9ad3eb61-3f75be7a',
-        domain:'sandbox086d2bbca5584a9a9969236a701f790c.mailgun.org'
+        api_key:'8fd6ffe1b484c8307edd34c775d3628a-50f43e91-0a03cb2e',
+        domain:'sandbox3e5cb7f8119745119f5bd88ea5874ad6.mailgun.org'
     }
 };
 
@@ -14,16 +14,16 @@ const sendMail=(email,message,cb)=>
 {
     const mailOptions = {
         from: email,
-        to: 'sanya.bahl001@gmail.com', // TODO: the receiver email
+        to: 'ulogistics21@gmail.com', // TODO: the receiver email
         text: message
     };
     
-    transporter.sendMail(mailOptions,(err)=>
+    transporter.sendMail(mailOptions,(err,data)=>
     {
       if(err)
-      cb(err,null)
+      cb(err,null);
       else
-      cb(null,data)
+      cb( null,data);
     })
 }
 module.exports=sendMail;

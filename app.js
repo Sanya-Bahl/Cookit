@@ -185,14 +185,16 @@ app.get('/contact',(req,res)=>
 app.post('/email',(req,res)=>
 {
   const {email,message}=req.body; 
-  console.log(req.body)
+ 
   sendMail(email,message,function(err,data)
   {
+    console.log(email);
     if(err)
     {
-      res.status(500).json({response: 'we have an error'})
+      console.log(err);
     }else
     {
+      console.log('sent');
       res.json({response:"email sent!"})
     }
   });

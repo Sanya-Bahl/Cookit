@@ -26,23 +26,24 @@
       });
     });
     
-      $('#form').submit((e)=>
+      $('#form1').on('submit', (e)=>
       {
         
         e.preventDefault();
         console.log('sending');
         const email=$('#email').val().trim();
         const message=$('#message').val().trim();
-        console.log('data received!');
         const data=
         {
           email,
           message
         }
-        // $.post('/email',data,()=>
-        // {
-        //   console.log('data received!');
-        // })
+        console.log('data received!');
+        $.post('/email',data,()=>
+        {
+          console.log('data received!');
+        })
+
       });
        
 
